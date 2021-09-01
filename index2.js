@@ -9,7 +9,8 @@ fetch("https://run.mocky.io/v3/bf175661-5e9f-4112-8580-d587759ff72e")
         saveData(data)
         brandFilter(data)
         cateFilter(data)
-        search(data)
+        searchData(data)
+
     });
 
     var productData = [];
@@ -17,8 +18,8 @@ const saveData = (data) => {
     productData = data;
 };
 
-// This section for cards:-
-const cards = (data) => {
+// This section for displaying cards ----------------------------------
+var cards = (data) => {
     console.log(data);
     var cardData = document.getElementById("column");
     var htmlContent=[];
@@ -33,7 +34,10 @@ const cards = (data) => {
     })
 };
 
-// This section for gender:-
+
+
+
+// This section for displaying gender in sidebar-----------------------------------:-
 const filter=(data)=>{
     console.log(data);
     var filterHtml=document.getElementById("filter");
@@ -50,6 +54,7 @@ const filter=(data)=>{
 
     filterHtml.innerHTML=htmlContent;
 };
+// filter data from gender-----------------------------------------------------------:-
 function genderFilter() {
     var genderVal = document.querySelector('input[name="gender"]:checked').value;
     var data = productData.filter((radiodata) => radiodata.gender === genderVal);
@@ -61,7 +66,7 @@ function genderFilter() {
 
 
 
-// This section for categories:-
+// This section for displaying categories------------------------------------------------:-
 const categories=(data)=>{
     console.log(data);
     var cateHtml=document.getElementById("cate"); 
@@ -79,6 +84,7 @@ const categories=(data)=>{
  })
  cateHtml.innerHTML=htmlContent;
 }
+// filter data from category---------------------------------------------------:-
 function cateFilter() {
     var brandVal = document.querySelectorAll('input[name="category"]:checked');
     var brandData = [];
@@ -98,7 +104,7 @@ function cateFilter() {
 
 
 
-// this section for brands:-
+// this section for Displaying brands-------------------------------------------------:-
 const brands=(data)=>{
     console.log(data);
     var brandHtml=document.getElementById("brands");
@@ -115,6 +121,7 @@ const brands=(data)=>{
 })
    brandHtml.innerHTML=htmlContent;
 }
+// Filter data from brand-----------------------------------------------------:-
 function brandFilter() {
     var brandVal = document.querySelectorAll('input[name="brand"]:checked');
     var brandData = [];
@@ -132,3 +139,15 @@ function brandFilter() {
 
 
 
+
+
+
+// This section for nav serchbar--------------------------------------------:-
+
+function searchData() {
+    var searchKeyword = document.getElementById("navSearch").value.toUpperCase();
+    console.log(searchKeyword);
+    var searchResult = productData.filter((searchItem) => searchItem.product.toUpperCase().includes(searchKeyword));
+    console.log(searchResult);
+    cards(searchResult);
+};
