@@ -84,17 +84,19 @@ padding:4px;
     /* grid-gap:50px; */
     grid-row-gap:20px;
     grid-column-gap:20px;
+    border-style:ridge;
 
 }
 .col1{
     border-style: ridge;
+    padding:5px;
 
 }
 #column img{
     width:195px;
 }
 #column h4{
-    padding:0;
+    padding:3px;
     margin:0;
 }
 #column p{
