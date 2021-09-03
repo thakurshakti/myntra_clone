@@ -80,16 +80,16 @@ padding:4px;
     box-sizing: border-box;
     /* clear:both; */
     display:grid;
-    grid-template-columns:200px 200px 200px 200px;
+    grid-template-columns:250px 250px 250px 250px ;
     grid-template-rows: auto  ;
     /* grid-gap:50px; */
     grid-row-gap:20px;
     grid-column-gap:;
-    border-style:ridge;
+/*     border-style:ridge; */
 
 }
 .col1{
-    border-style: ridge;
+/*     border-style: ridge; */
     
 
 }
