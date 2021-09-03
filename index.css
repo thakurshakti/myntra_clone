@@ -74,7 +74,7 @@ padding:4px;
 
 #column{
     float:left;
-    width:auto;
+    width:;
     margin: 0 0 0 40px;
     padding:40px;
     box-sizing: border-box;
@@ -84,7 +84,7 @@ padding:4px;
     grid-template-rows: auto  ;
     /* grid-gap:50px; */
     grid-row-gap:20px;
-    grid-column-gap:20px;
+    grid-column-gap:;
     border-style:ridge;
 
 }
